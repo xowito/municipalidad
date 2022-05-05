@@ -1,0 +1,22 @@
+{% extends 'muni_app/base.html' %}
+{% load crispy_forms_tags %}
+{% block titulo %}{% endblock titulo %}
+
+
+{% block contenido %}
+
+
+<div class="card">
+    <div class="card-header">
+        <h1>Agregar una hora al calendario</h1>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            {{form | crispy}}
+            <input class="btn btn-success mt-5" type="submit" value="Cargar hora">
+        </form>
+    </div>
+</div>
+
+{% endblock contenido %}
